@@ -7,6 +7,9 @@
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
   --font-form-inputs: 24px;
+  /*custom colors*/
+  --light-red: #e1baac;
+  --light-cyan: #9fe8df;
 }
 
 * {
@@ -80,6 +83,7 @@ input[type="number"] {
   padding: 0.5rem;
   width: 100%;
   cursor: pointer;
+  border: 2px solid transparent;
 
   /*
   height: 100%; */
@@ -108,6 +112,8 @@ input:focus::placeholder {
 input[type="number"]:focus {
   outline: none;
   border: 2px solid var(--strong-cyan);
+  /* box-shadow: 0 0 0 2px var(--strong-cyan); */
+  border-radius: 4px;
 }
 
 .tip-amount {
@@ -144,35 +150,43 @@ input[type="number"]:focus {
 #custom-tip::placeholder {
   text-align: center;
 }
+input[type="radio"][name="buttonGroup"] {
+  display: none;
+}
 
-.tip-amount button {
-  border: none;
+.tip-button {
   font-size: var(--font-form-inputs);
   color: var(--white);
   background-color: var(--very-dark-cyan);
   border-radius: 4px;
   cursor: pointer;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-.tip-amount button:focus {
+.tip-button:focus {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
   outline: none;
 }
+input[type="radio"][name="buttonGroup"]:checked + label {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
 
 .error {
   display: none;
-  color: red;
+  color: var(--light-red);
   float: right;
 }
 
 .invalid {
-  border: 2px solid red !important;
+  /* box-shadow: 0 0 0 2px red !important; */
+  border: 2px solid var(--light-red) !important;
 }
 
 .result {
   background-color: var(--very-dark-cyan);
-
   border-radius: 10px;
   padding: 1.5rem;
 }
@@ -212,8 +226,17 @@ input[type="number"]:focus {
   cursor: pointer;
   width: 100%;
   height: 2.5rem;
+  border: none;
 }
 
+.reset:hover {
+  background-color: var(--light-cyan);
+}
+
+.tip-button:hover {
+  color: var(--very-dark-cyan);
+  background-color: var(--light-cyan);
+}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -248,12 +271,32 @@ input[type="number"]:focus {
     /* margin: 2rem; */
   }
 
+  #custom-tip {
+    font-size: 20px;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .result-wrapper {
+    margin: 1rem 0 0;
+  }
+
   .result h1 {
-    font-size: 1rem;
+    font-size: 0.8rem; /*13px*/
   }
 
   .result p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .total-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   .attribution {
