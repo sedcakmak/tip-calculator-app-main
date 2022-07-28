@@ -223,6 +223,10 @@ input[type="radio"][name="buttonGroup"]:checked + label {
   border: none;
 }
 
+.reset:enabled {
+  background-color: var(--strong-cyan);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
