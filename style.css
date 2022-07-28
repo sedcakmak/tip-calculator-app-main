@@ -164,23 +164,17 @@ input[type="radio"][name="buttonGroup"] {
   padding: 0.5rem;
 }
 
-.tip-button:focus {
-  background-color: var(--strong-cyan);
-  color: var(--very-dark-cyan);
-  outline: none;
-}
 input[type="radio"][name="buttonGroup"]:checked + label {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }
-
 .error {
   display: none;
   color: var(--light-red);
   float: right;
 }
 
-.invalid {
+.invalid-value {
   /* box-shadow: 0 0 0 2px red !important; */
   border: 2px solid var(--light-red) !important;
 }
@@ -229,14 +223,6 @@ input[type="radio"][name="buttonGroup"]:checked + label {
   border: none;
 }
 
-.reset:hover {
-  background-color: var(--light-cyan);
-}
-
-.tip-button:hover {
-  color: var(--very-dark-cyan);
-  background-color: var(--light-cyan);
-}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -269,6 +255,14 @@ input[type="radio"][name="buttonGroup"]:checked + label {
     /* grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr); */
     /* margin: 2rem; */
+  }
+  .reset:hover {
+    background-color: var(--light-cyan);
+  }
+
+  .tip-button:hover {
+    color: var(--very-dark-cyan);
+    background-color: var(--light-cyan);
   }
 
   #custom-tip {
