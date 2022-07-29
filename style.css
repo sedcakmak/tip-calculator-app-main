@@ -8,7 +8,7 @@
   --white: hsl(0, 0%, 100%);
   --font-form-inputs: 24px;
   /*custom colors*/
-  --light-red: #e1baac;
+  --light-red: #ee9473;
   --light-cyan: #9fe8df;
 }
 
@@ -47,7 +47,7 @@ header {
 #people {
   background-image: url("./images/icon-person.svg");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position-y: center;
   background-position-x: 4%;
   padding-right: 2rem;
 }
@@ -73,17 +73,18 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-input[type="number"] {
+.input-field {
   /* -moz-appearance: textfield; */ /* Firefox for hiding arrows*/
-  border: none;
   text-align: right;
   font-size: var(--font-form-inputs);
   color: var(--very-dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
   display: block;
   padding: 0.5rem;
   width: 100%;
   cursor: pointer;
   border: 2px solid transparent;
+  border-radius: 4px;
 
   /*
   height: 100%; */
@@ -175,7 +176,6 @@ input[type="radio"][name="buttonGroup"]:checked + label {
 }
 
 .invalid-value {
-  /* box-shadow: 0 0 0 2px red !important; */
   border: 2px solid var(--light-red) !important;
 }
 
@@ -206,8 +206,31 @@ input[type="radio"][name="buttonGroup"]:checked + label {
 
 .total {
   color: var(--strong-cyan);
+  background-color: transparent;
   text-align: right;
-  font-size: 30px;
+  border: none;
+  width: 100%;
+  font-size: 26px;
+}
+
+.total::-webkit-input-placeholder {
+  color: inherit;
+}
+
+.total::-moz-placeholder {
+  color: inherit;
+}
+
+.total:-ms-input-placeholder {
+  color: inherit;
+}
+
+.total::-ms-input-placeholder {
+  color: inherit;
+}
+
+.total::placeholder {
+  color: inherit;
 }
 
 .reset {

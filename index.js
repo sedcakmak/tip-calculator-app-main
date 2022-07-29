@@ -22,7 +22,11 @@ people.addEventListener("input", (e) => {
   errorMessage(e);
 });
 
-//resetButton.addEventListener("click", resetAllInput);
+resetButton.addEventListener("click", function () {
+  setTimeout(function () {
+    resetButton.disabled = true;
+  }, 100);
+});
 
 function calculate() {
   let tipDisplay;
@@ -44,11 +48,11 @@ function calculate() {
     : (totalDisplay = Number(bill.value));
 
   if (people.value > 0) {
-    total.innerHTML = "$" + (totalDisplay / Number(people.value)).toFixed(2);
-    tipAmount.innerHTML = "$" + (tipDisplay / Number(people.value)).toFixed(2);
+    total.value = "$" + (totalDisplay / Number(people.value)).toFixed(2);
+    tipAmount.value = "$" + (tipDisplay / Number(people.value)).toFixed(2);
   } else {
-    total.innerHTML = "$" + totalDisplay.toFixed(2);
-    tipAmount.innerHTML = "$" + tipDisplay.toFixed(2);
+    total.value = "$" + totalDisplay.toFixed(2);
+    tipAmount.value = "$" + tipDisplay.toFixed(2);
   }
 }
 
@@ -75,9 +79,4 @@ function errorMessage(e) {
     error.style.display = "none";
     people.classList.remove("invalid-value");
   }
-}
-
-function resetAllInput() {
-  document.getElementById("myForm").reset();
-  //window.location.reload();
 }
