@@ -47,7 +47,7 @@ header {
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: 4%;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 #bill {
@@ -55,7 +55,7 @@ header {
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: 4%;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .label-text {
